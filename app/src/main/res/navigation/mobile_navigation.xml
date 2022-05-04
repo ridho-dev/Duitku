@@ -12,14 +12,20 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.dededev.duitku.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_transaction"
+        android:name="com.dededev.duitku.ui.transactions.TransactionsFragment"
+        android:label="@string/title_transactions"
+        tools:layout="@layout/fragment_transactions" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.dededev.duitku.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_goals"
+        android:name="com.dededev.duitku.ui.goals.GoalsFragment"
+        android:label="@string/title_goals"
+        tools:layout="@layout/fragment_goals" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.dededev.duitku.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
