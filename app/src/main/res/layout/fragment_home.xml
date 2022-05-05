@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_home_transactions"
         android:layout_width="wrap_content"
@@ -35,4 +21,363 @@
         app:srcCompat="@drawable/ic_baseline_add_24"
         app:tint="@color/white"
         tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+        app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+        app:layout_constraintTop_toTopOf="@+id/iv_avatar">
+
+        <TextView
+            android:id="@+id/tv_home_greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Selamat Pagi, User!"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_home_greeting2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="0dp"
+            android:text="Selamat Beraktivitas!"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_balance_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        android:background="@drawable/card_bg"
+        android:elevation="5dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/tv_home_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp. 35.200.000"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_home_income_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Pemasukan"
+            app:layout_constraintStart_toStartOf="@+id/tv_home_balance"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_balance" />
+
+        <TextView
+            android:id="@+id/tv_home_income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ Rp. 7.000.000"
+            android:textColor="@color/green_200"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_home_income_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_income_title" />
+
+        <TextView
+            android:id="@+id/tv_home_expense_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pengeluaran"
+            android:layout_marginStart="96dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_home_income_title"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_income_title" />
+
+        <TextView
+            android:id="@+id/tv_home_expensee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ Rp. 2.250.000"
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_home_expense_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_expense_title" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_income">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_home_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Semua"
+                    android:textColor="@color/green_200"
+                    app:strokeColor="@color/green_200"
+                    app:cornerRadius="3dp"
+                    android:textAllCaps="false"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:textSize="12sp"
+                    android:paddingVertical="2dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:letterSpacing="0"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_home_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hari ini"
+                    android:textColor="@color/grey"
+                    app:strokeColor="@color/grey"
+                    app:cornerRadius="3dp"
+                    android:textAllCaps="false"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:textSize="12sp"
+                    android:paddingVertical="2dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:letterSpacing="0"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_home_this_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minggu ini"
+                    android:textColor="@color/grey"
+                    app:strokeColor="@color/grey"
+                    app:cornerRadius="3dp"
+                    android:textAllCaps="false"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:textSize="12sp"
+                    android:paddingVertical="2dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:letterSpacing="0"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_home_last_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minggu lalu"
+                    android:textColor="@color/grey"
+                    app:strokeColor="@color/grey"
+                    app:cornerRadius="3dp"
+                    android:textAllCaps="false"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:textSize="12sp"
+                    android:paddingVertical="2dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:letterSpacing="0"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_home_this_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bulan ini"
+                    android:textColor="@color/grey"
+                    app:strokeColor="@color/grey"
+                    app:cornerRadius="3dp"
+                    android:textAllCaps="false"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:textSize="12sp"
+                    android:paddingVertical="2dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:letterSpacing="0"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_home_last_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bulan lalu"
+                    android:textColor="@color/grey"
+                    app:strokeColor="@color/grey"
+                    app:cornerRadius="3dp"
+                    android:textAllCaps="false"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:textSize="12sp"
+                    android:paddingVertical="2dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:letterSpacing="0"
+                    android:layout_marginEnd="8dp"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/card_bg"
+        android:elevation="5dp"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_balance_card" >
+
+        <TextView
+            android:id="@+id/tv_home_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hari ini"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_category_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_home_today"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_today"
+            android:src="@drawable/ic_baseline_account_balance_wallet_24"
+            android:padding="7dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/item_category_icon_bg"
+            app:tint="@color/white" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_category_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_category_icon"
+            app:layout_constraintTop_toTopOf="@+id/iv_category_icon">
+
+            <TextView
+                android:id="@+id/tv_home_transaction_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gaji Bulan April"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_home_transaction_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gaji"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_home_transaction_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_transaction_title" />
+
+            <TextView
+                android:id="@+id/tv_home_transaction_expense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+ Rp. 7.000.000"
+                android:textColor="@color/green_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_home_transaction_title" />
+
+            <TextView
+                android:id="@+id/tv_home_transaction_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 Mei 2022"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_home_transaction_expense"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_transaction_expense" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/iv_category_icon2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/item_category_icon_bg"
+            android:padding="7dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_baseline_shopping_cart_24"
+            app:layout_constraintStart_toStartOf="@+id/tv_home_today"
+            app:layout_constraintTop_toBottomOf="@+id/iv_category_icon"
+            app:tint="@color/white" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_category_icon2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/iv_category_icon2"
+            app:layout_constraintTop_toTopOf="@+id/iv_category_icon2">
+
+            <TextView
+                android:id="@+id/tv_home_transaction_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belanja ke mall"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_home_transaction_desc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belanja"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_home_transaction_title2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_transaction_title2" />
+
+            <TextView
+                android:id="@+id/tv_home_transaction_expense2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Rp. 2.250.000"
+                android:textColor="@color/red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_home_transaction_title2" />
+
+            <TextView
+                android:id="@+id/tv_home_transaction_date2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 Mei 2022"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_home_transaction_expense2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_transaction_expense2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
