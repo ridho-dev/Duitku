@@ -1,5 +1,6 @@
 package com.dededev.duitku.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.dededev.duitku.databinding.FragmentHomeBinding
+import com.dededev.duitku.ui.addTransaction.AddTransactionActivity
 
 class HomeFragment : Fragment() {
 
@@ -34,6 +36,10 @@ class HomeFragment : Fragment() {
                     .load("https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80")
                     .circleCrop()
                     .into(ivAvatar)
+            }
+            fabAddHomeTransactions.setOnClickListener {
+                val intent = Intent(activity, AddTransactionActivity::class.java)
+                startActivity(intent)
             }
         }
 
